@@ -34,7 +34,7 @@ namespace AnxietyDisorder
                 case 3:
                 case 4:
                     {
-                        Console.WriteLine("\nNo anxiety.");
+                        Console.WriteLine("\nMinimal anxiety.");
                         break;
                     }
                 case 5:
