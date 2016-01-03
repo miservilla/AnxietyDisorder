@@ -63,6 +63,8 @@ namespace AnxietyDisorder
 
                     }
             }
+            DateTime now = DateTime.Now;
+            Console.WriteLine(now);
             Console.ReadLine();
 
         }
