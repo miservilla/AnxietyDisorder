@@ -11,8 +11,8 @@ namespace AnxietyDisorder
         static void Main(string[] args)
         {
             Console.WriteLine("Hello, this program will help you complete the Generalized Anxiety 7 Item Questionaire.\n\n"
-                + "Use the following responses to answer the 7 questions:\n"
-                + "0 = Not at all, 1 = Several days, 2 = More than hald the days, 3 = Nearly every day.\n\n"
+                + "Use the following responses to answer ALL 7 questions:\n"
+                + "0 = Not at all, 1 = Several days, 2 = More than half the days, 3 = Nearly every day.\n\n"
                 + "Over the past 2 weeks, how often have you been bothered by the following problems?\n");
             int Item1 = GetValue("Feeling nervous, anxious, or on edge? ");
             int Item2 = GetValue("Not being able to stop or control worrying? ");
@@ -23,6 +23,7 @@ namespace AnxietyDisorder
             int Item7 = GetValue("Feeling afraid, as if something awful might happen? ");
 
             int totalScore = (Item1 + Item2 + Item3 + Item4 + Item5 + Item6 + Item7);
+            Console.ForegroundColor = System.ConsoleColor.Red;
 
             switch (totalScore)
             {
@@ -33,7 +34,6 @@ namespace AnxietyDisorder
                 case 3:
                 case 4:
                     {
-                        Console.ForegroundColor = System.ConsoleColor.Red;
                         Console.WriteLine("\nNo anxiety.");
                         break;
                     }
@@ -43,7 +43,6 @@ namespace AnxietyDisorder
                 case 8:
                 case 9:
                     {
-                        Console.ForegroundColor = System.ConsoleColor.Red;
                         Console.WriteLine("\nMild, probably subclinical anxiety, and monitoring is recommended.");
                         break;
                     }
@@ -53,14 +52,12 @@ namespace AnxietyDisorder
                 case 13:
                 case 14:
                     {
-                        Console.ForegroundColor = System.ConsoleColor.Red;
                         Console.WriteLine("\nModerate, possible clinically significant anxiety, and further evaluation and treatment (if needed) are recommended.");
                         break;
                     }
 
                 default:
                     {
-                        Console.ForegroundColor = System.ConsoleColor.Red;
                         Console.WriteLine("\nSevere, probably clinically significant anxiety, and treatment is probably warranted.");
                         break;
 
@@ -77,13 +74,15 @@ namespace AnxietyDisorder
             {
                 Console.Write(label);
                 string input = Console.ReadLine();
-                if ((int.TryParse(input, out value)) && value > -1 && value < 4)
+                if ((int.TryParse(input, out value)) && value >= 0 && value <= 3)
                 {
                     return value;
                 }
                 else
                 {
+                    Console.ForegroundColor = System.ConsoleColor.Red;
                     Console.WriteLine("Input error, try again!)");
+                    Console.ForegroundColor = System.ConsoleColor.White;
                 }
             }
         }
