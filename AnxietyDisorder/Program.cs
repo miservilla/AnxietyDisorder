@@ -10,10 +10,10 @@ namespace AnxietyDisorder
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, this program will help you complete the Generalized Anxiety 7 Item Questionaire.\n\n"
+            Console.WriteLine("Hello, this program will help you complete the GAD-7 Item Questionnaire.\n\n"
                 + "Use the following responses to answer ALL 7 questions:\n"
                 + "0 = Not at all, 1 = Several days, 2 = More than half the days, 3 = Nearly every day.\n\n"
-                + "Over the past 2 weeks, how often have you been bothered by the following problems?\n");
+                + "Over the past 2 weeks, how often have you been bothered by the following problems:\n");
             int Item1 = GetValue("Feeling nervous, anxious, or on edge? ");
             int Item2 = GetValue("Not being able to stop or control worrying? ");
             int Item3 = GetValue("Worrying too much about different things? ");
